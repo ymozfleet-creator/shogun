@@ -3,753 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>オットセイ将軍｜指定医薬部外品｜滋養強壮・肉体疲労の回復</title>
+<title>オットセイ将軍｜健康食品｜毎日の健康維持に</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Antique&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a08;--deep:#111110;--card:#1f1e1b;--card-hover:#262520;
+  --gold:#c5a44e;--gold-light:#dfc06a;--gold-bright:#f0d77d;--gold-dim:rgba(197,164,78,.15);
+  --red:#8b2020;--red-bright:#b52a2a;
+  --amazon:#ff9900;--amazon-dark:#e88b00;--amazon-bg:#232f3e;
+  --text:#d4cbb8;--text-dim:#8a8373;--white:#f5f0e3;
+  --font-display:'Zen Antique',serif;--font-heading:'Shippori Mincho B1',serif;--font-body:'Noto Serif JP',serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--black);color:var(--text);font-family:var(--font-body);line-height:1.9;overflow-x:hidden}
 
-:root {
-  --black: #0a0a08;
-  --deep: #111110;
-  --dark: #1a1917;
-  --card: #1f1e1b;
-  --gold: #c5a44e;
-  --gold-light: #dfc06a;
-  --gold-bright: #f0d77d;
-  --red: #8b2020;
-  --red-bright: #b52a2a;
-  --cream: #e8e0cc;
-  --text: #d4cbb8;
-  --text-dim: #8a8373;
-  --white: #f5f0e3;
-  --font-display: 'Zen Antique', serif;
-  --font-heading: 'Shippori Mincho B1', serif;
-  --font-body: 'Noto Serif JP', serif;
-}
+.container{max-width:820px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0;position:relative}
+.section-label{font-family:var(--font-display);font-size:.7rem;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:12px}
+.section-title{font-family:var(--font-heading);font-weight:800;font-size:clamp(1.5rem,3.5vw,2rem);color:var(--white);line-height:1.5;margin-bottom:32px}
+.gold-line{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:24px}
+.strong{color:var(--white);font-weight:700}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.12s}.reveal-delay-2{transition-delay:.24s}.reveal-delay-3{transition-delay:.36s}
 
-html { scroll-behavior: smooth; font-size: 16px; }
+/* === HEADER NAV === */
+.header-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,8,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--gold-dim);transition:transform .3s}
+.header-nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:52px}
+.header-logo{font-family:var(--font-display);font-size:1rem;color:var(--gold);letter-spacing:.1em;text-decoration:none;flex-shrink:0}
+.header-links{display:flex;align-items:center;gap:0}
+.header-link{font-family:var(--font-heading);font-size:.68rem;color:var(--text-dim);text-decoration:none;padding:16px 14px;letter-spacing:.06em;transition:color .3s;white-space:nowrap}
+.header-link:hover{color:var(--gold)}
+.header-badge{font-size:.5rem;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(197,164,78,.3);padding:2px 8px;margin-right:10px;flex-shrink:0}
+.header-cta{font-family:var(--font-heading);font-size:.68rem;background:var(--amazon);color:#111;padding:6px 16px;border:none;cursor:pointer;letter-spacing:.08em;text-decoration:none;display:inline-block;font-weight:700;border-radius:3px;transition:background .3s;flex-shrink:0}
+.header-cta:hover{background:var(--amazon-dark)}
 
-body {
-  background: var(--black);
-  color: var(--text);
-  font-family: var(--font-body);
-  line-height: 1.9;
-  overflow-x: hidden;
-}
+/* === FV === */
+.fv{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding-top:52px}
+.fv-bg{position:absolute;inset:0;z-index:0}
+.fv-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.32;filter:brightness(.7) contrast(1.15)}
+.fv-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,8,.6) 0%,rgba(10,10,8,.25) 35%,rgba(10,10,8,.8) 100%)}
+.fv-content{position:relative;z-index:2;max-width:700px;padding:0 24px}
+.fv-badge{display:inline-block;border:1px solid rgba(197,164,78,.5);padding:5px 18px;font-size:.65rem;letter-spacing:.15em;color:var(--gold-light);font-family:var(--font-heading);margin-bottom:28px;animation:fadeIn 1s ease .3s both}
+.fv-sub{font-family:var(--font-heading);font-size:clamp(.82rem,1.8vw,.95rem);color:var(--text-dim);letter-spacing:.2em;margin-bottom:18px;animation:fadeIn 1s ease .5s both}
+.fv-main{font-family:var(--font-display);font-size:clamp(2.6rem,7vw,4.8rem);color:var(--white);line-height:1.25;margin-bottom:12px;animation:fadeUp 1s ease .7s both;text-shadow:0 0 60px rgba(197,164,78,.12)}
+.fv-main .gold{color:var(--gold)}
+.fv-tagline{font-family:var(--font-heading);font-size:clamp(.95rem,2.2vw,1.15rem);color:var(--gold-light);letter-spacing:.12em;margin-bottom:10px;animation:fadeIn 1s ease 1s both}
+.fv-tagline-sub{font-size:.82rem;color:var(--text);margin-bottom:28px;animation:fadeIn 1s ease 1.2s both;line-height:1.8}
+.fv-effects{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:30px;animation:fadeIn 1s ease 1.4s both}
+.fv-effect-tag{font-size:.76rem;color:var(--text);border:1px solid rgba(197,164,78,.25);padding:8px 16px;font-family:var(--font-heading);letter-spacing:.06em;background:rgba(10,10,8,.5);backdrop-filter:blur(8px)}
+.fv-cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 1.6s both}
+.cta-amazon{display:inline-block;font-family:var(--font-heading);font-weight:800;font-size:.9rem;letter-spacing:.1em;color:#111;background:var(--amazon);padding:14px 40px;text-decoration:none;transition:transform .3s,box-shadow .3s,background .3s;box-shadow:0 4px 20px rgba(255,153,0,.25);border-radius:4px}
+.cta-amazon:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,153,0,.35);background:var(--amazon-dark)}
+.cta-detail{display:inline-block;font-family:var(--font-heading);font-size:.78rem;letter-spacing:.1em;color:var(--white);padding:14px 30px;border:1px solid var(--gold);text-decoration:none;transition:background .3s}
+.cta-detail:hover{background:rgba(197,164,78,.06)}
+.fv-amazon-info{margin-top:14px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;animation:fadeIn 1s ease 1.9s both}
+.fv-amazon-tag{font-size:.65rem;color:var(--text-dim);font-family:var(--font-heading)}
+.fv-amazon-tag b{color:var(--amazon)}
 
-.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; position: relative; }
-.section-label {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  color: var(--gold);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 12px;
-}
-.section-title {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: var(--white);
-  line-height: 1.5;
-  margin-bottom: 40px;
-}
-.gold-line {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  margin-bottom: 28px;
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(197,164,78,.2),transparent);max-width:600px;margin:0 auto}
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* TOP BAR */
-.top-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(10,10,8,0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(197,164,78,0.15);
-  padding: 10px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-.top-bar-logo {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-}
-.top-bar-cta {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  background: var(--red);
-  color: var(--white);
-  padding: 6px 20px;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.15em;
-  transition: background 0.3s;
-}
-.top-bar-cta:hover { background: var(--red-bright); }
-
-/* FIRST VIEW */
-.fv {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 60px;
-}
-.fv::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139,32,32,0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 60% at 50% 100%, rgba(197,164,78,0.06) 0%, transparent 60%);
-  pointer-events: none;
-}
-.fv::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-.fv-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 0 24px;
-}
-.fv-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--gold);
-  padding: 6px 22px;
-  margin-bottom: 36px;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  font-family: var(--font-heading);
-  animation: fadeIn 1s ease 0.3s both;
-}
-.fv-badge::before { content: '✦'; font-size: 0.6rem; }
-.fv-sub {
-  font-family: var(--font-heading);
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  color: var(--text-dim);
-  letter-spacing: 0.25em;
-  margin-bottom: 20px;
-  animation: fadeIn 1s ease 0.6s both;
-}
-.fv-main {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 14px;
-  animation: fadeUp 1.2s ease 0.8s both;
-  text-shadow: 0 0 80px rgba(197,164,78,0.15);
-}
-.fv-main .gold { color: var(--gold); }
-.fv-tagline {
-  font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
-  color: var(--gold-light);
-  letter-spacing: 0.18em;
-  margin-bottom: 32px;
-  animation: fadeIn 1s ease 1.4s both;
-}
-.fv-benefits {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-  animation: fadeIn 1s ease 1.7s both;
-}
-.fv-benefit {
-  font-size: 0.82rem;
-  color: var(--text);
-  border: 1px solid rgba(197,164,78,0.25);
-  padding: 8px 18px;
-  font-family: var(--font-heading);
-  letter-spacing: 0.08em;
-}
-.fv-cta-wrap { animation: fadeUp 1s ease 2s both; }
-.cta-primary {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--red) 0%, #6b1818 100%);
-  padding: 18px 52px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 30px rgba(139,32,32,0.3);
-}
-.cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(139,32,32,0.45);
-}
-.cta-primary::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border: 1px solid var(--gold);
-  opacity: 0.3;
-  pointer-events: none;
-}
-.fv-note {
-  margin-top: 16px;
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  animation: fadeIn 1s ease 2.3s both;
-}
-.scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  animation: pulse 2s ease infinite, fadeIn 1s ease 2.5s both;
-}
-.scroll-hint span { font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.2em; }
-.scroll-hint i { width: 1px; height: 28px; background: linear-gradient(to bottom, var(--gold), transparent); display: block; }
-
-/* DIVIDER */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(197,164,78,0.2), transparent);
-  max-width: 600px;
-  margin: 0 auto;
-}
+/* Photo band */
+.photo-band{position:relative;height:300px;overflow:hidden}
+.photo-band img{width:100%;height:100%;object-fit:cover}
+.photo-band-overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,transparent 20%,transparent 80%,var(--black) 100%)}
+.photo-band-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
+.photo-band-text p{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,2.2rem);color:var(--white);text-align:center;text-shadow:0 2px 30px rgba(0,0,0,.8);line-height:1.6;letter-spacing:.1em}
+.photo-band-text .gold{color:var(--gold-light)}
 
 /* PAIN */
-.pain { background: var(--deep); }
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-bottom: 50px;
-}
-.pain-card {
-  background: var(--card);
-  border-left: 3px solid var(--red);
-  padding: 28px 24px;
-  position: relative;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.pain-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.pain-card-num {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  color: rgba(197,164,78,0.1);
-  position: absolute;
-  top: 10px;
-  right: 16px;
-}
-.pain-card p { font-size: 0.92rem; line-height: 1.8; }
-.pain-card strong { color: var(--white); font-weight: 700; }
-.pain-bottom {
-  text-align: center;
-  font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  color: var(--white);
-  line-height: 2;
-  padding: 36px 0;
-  border-top: 1px solid rgba(197,164,78,0.1);
-  border-bottom: 1px solid rgba(197,164,78,0.1);
-}
-.pain-bottom .em { color: var(--gold); font-weight: 800; }
+.pain{background:var(--deep)}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+.pain-card{background:var(--card);border-left:3px solid var(--red);padding:24px 20px;position:relative;transition:border-color .3s}
+.pain-card:hover{border-color:var(--gold)}
+.pain-card-num{font-family:var(--font-display);font-size:2rem;color:rgba(197,164,78,.08);position:absolute;top:8px;right:14px}
+.pain-card p{font-size:.88rem;line-height:1.8}
+.pain-card strong{color:var(--white);font-weight:700}
+.pain-bottom{text-align:center;font-family:var(--font-heading);font-size:clamp(1rem,2.5vw,1.3rem);color:var(--white);line-height:2;padding:28px 0;border-top:1px solid rgba(197,164,78,.1);border-bottom:1px solid rgba(197,164,78,.1)}
+.pain-bottom .em{color:var(--gold);font-weight:800}
+
+/* STORY */
+.story{background:var(--black)}
+.story-timeline{position:relative;padding-left:36px;margin-top:30px}
+.story-timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold),rgba(197,164,78,.12))}
+.story-era{position:relative;margin-bottom:40px}
+.story-era:last-child{margin-bottom:0}
+.story-era::before{content:'';position:absolute;left:-30px;top:5px;width:10px;height:10px;border:2px solid var(--gold);background:var(--deep);border-radius:50%;z-index:1}
+.story-era-date{font-family:var(--font-heading);font-size:.65rem;color:var(--gold);letter-spacing:.2em;margin-bottom:4px}
+.story-era h3{font-family:var(--font-heading);font-size:.98rem;color:var(--white);margin-bottom:10px;font-weight:800;line-height:1.6}
+.story-era p{font-size:.82rem;line-height:2}
+.story-era-quote{margin-top:12px;padding:14px 18px;border-left:3px solid var(--gold);background:rgba(197,164,78,.03);font-style:italic;font-size:.78rem;line-height:1.9}
+.story-era-source{font-size:.6rem;color:var(--text-dim);margin-top:4px;font-style:normal}
+.story-naming{margin-top:40px;padding:30px 28px;border:1px solid var(--gold-dim);background:linear-gradient(160deg,rgba(197,164,78,.04),transparent);text-align:center}
+.story-naming h3{font-family:var(--font-display);font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--white);margin-bottom:14px}
+.story-naming p{font-size:.84rem;line-height:2;max-width:540px;margin:0 auto}
+.story-naming .gold{color:var(--gold-light)}
 
 /* SOLUTION */
-.solution-hero { text-align: center; padding: 80px 0; position: relative; }
-.solution-hero::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(197,164,78,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.solution-announce {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  color: var(--white);
-  line-height: 1.4;
-  margin-bottom: 16px;
-  position: relative;
-}
-.solution-announce .gold { color: var(--gold-light); }
-.solution-desc {
-  max-width: 560px;
-  margin: 24px auto 0;
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 2;
-}
+.solution-desc{max-width:580px;margin:0 auto;font-size:.9rem;line-height:2;text-align:center}
+.category-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:40px 0}
+.category-card{border:1px solid var(--gold-dim);padding:28px 22px;text-align:center;background:linear-gradient(160deg,rgba(197,164,78,.03),transparent);transition:border-color .3s}
+.category-card:hover{border-color:var(--gold)}
+.category-card h3{font-family:var(--font-heading);font-size:.95rem;color:var(--white);margin-bottom:6px;font-weight:800}
+.cat-label{display:inline-block;font-size:.58rem;color:var(--gold);border:1px solid rgba(197,164,78,.3);padding:2px 10px;font-family:var(--font-heading);letter-spacing:.1em;margin-bottom:10px}
+.category-card p{font-size:.75rem;color:var(--text-dim);line-height:1.8}
 
-.merit-section { padding: 60px 0 40px; }
-.merit-list { display: flex; flex-direction: column; gap: 36px; }
-.merit-item {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 24px;
-  align-items: start;
-}
-.merit-icon {
-  width: 64px; height: 64px;
-  border: 1px solid rgba(197,164,78,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--gold);
-  background: rgba(197,164,78,0.04);
-  flex-shrink: 0;
-}
-.merit-item h3 {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--white);
-  margin-bottom: 8px;
-  font-weight: 800;
-}
-.merit-item p { font-size: 0.88rem; color: var(--text); line-height: 1.85; }
+/* Compare */
+.compare-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:.78rem}
+.compare-table thead th{padding:12px 8px;font-family:var(--font-heading);font-weight:700;border-bottom:2px solid var(--gold-dim);color:var(--text-dim);text-align:center}
+.compare-table thead th small{font-size:.6rem;font-weight:400}
+.col-header-highlight{color:var(--gold)!important;position:relative}
+.col-header-highlight::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--gold)}
+.compare-table tbody td{padding:12px 8px;border-bottom:1px solid rgba(197,164,78,.08);text-align:center}
+.compare-table tbody td:first-child{text-align:left;font-weight:600;color:var(--white)}
+.highlight-col{background:rgba(197,164,78,.04)}
+.check{color:var(--gold);font-weight:700}
+.cross{color:var(--red-bright);opacity:.7}
 
-/* REASON */
-.reason { background: var(--deep); }
-.ingredient-hero {
-  text-align: center;
-  padding: 50px 0;
-  border: 1px solid rgba(197,164,78,0.15);
-  background: linear-gradient(160deg, rgba(197,164,78,0.04) 0%, transparent 50%);
-  margin-bottom: 50px;
-  position: relative;
-}
-.ingredient-hero::before {
-  content: '壱';
-  position: absolute;
-  top: 16px; left: 20px;
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--gold);
-  opacity: 0.5;
-}
-.ingredient-hero h3 {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-  color: var(--gold-light);
-  margin-bottom: 12px;
-}
-.ingredient-hero .sub {
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  letter-spacing: 0.15em;
-  color: var(--text-dim);
-  margin-bottom: 24px;
-}
-.ingredient-hero p {
-  max-width: 540px;
-  margin: 0 auto;
-  font-size: 0.9rem;
-  line-height: 2;
-  padding: 0 20px;
-}
-.sub-ingredients {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-top: 40px;
-}
-.sub-ingredient {
-  background: var(--card);
-  padding: 24px 20px;
-  border-top: 2px solid var(--gold);
-  text-align: center;
-}
-.sub-ingredient h4 {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.sub-ingredient p { font-size: 0.78rem; color: var(--text-dim); line-height: 1.7; }
-.quality-note {
-  margin-top: 50px;
-  padding: 28px 32px;
-  border: 1px solid rgba(197,164,78,0.12);
-  background: rgba(197,164,78,0.02);
-  font-size: 0.82rem;
-  line-height: 2;
-  color: var(--text);
-  text-align: center;
-}
+/* INGREDIENTS (no photos) */
+.reason{background:var(--deep)}
+.ingredient-hero{border:1px solid var(--gold-dim);padding:32px 28px;background:linear-gradient(160deg,rgba(197,164,78,.04),transparent);margin-bottom:36px;text-align:center}
+.ingredient-hero h3{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.6rem);color:var(--gold-light);margin-bottom:6px}
+.ingredient-hero .sub{font-size:.7rem;letter-spacing:.15em;color:var(--text-dim);margin-bottom:16px;font-family:var(--font-heading)}
+.ingredient-hero p{font-size:.84rem;line-height:2;max-width:520px;margin:0 auto}
+.ingredient-hero-amounts{display:flex;justify-content:center;gap:24px;margin-top:16px}
+.amt{text-align:center}
+.amt-num{font-family:var(--font-heading);font-size:1.4rem;font-weight:800;color:var(--gold-bright)}
+.amt-unit{font-size:.6rem;color:var(--text-dim);margin-top:2px}
+
+.sub-title{font-family:var(--font-heading);font-size:.9rem;color:var(--white);margin:24px 0 16px;font-weight:700}
+.sub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.sub-item{background:var(--card);border-top:2px solid var(--gold);padding:18px 16px;transition:transform .3s}
+.sub-item:hover{transform:translateY(-2px)}
+.sub-item-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.sub-item-top h4{font-family:var(--font-heading);font-size:.85rem;color:var(--white);font-weight:700}
+.dose{font-size:.65rem;color:var(--gold);font-family:var(--font-heading)}
+.sub-item p{font-size:.72rem;color:var(--text-dim);line-height:1.7;margin-bottom:8px}
+.effect-tag{display:inline-block;font-size:.58rem;color:var(--gold);border:1px solid rgba(197,164,78,.2);padding:2px 8px;font-family:var(--font-heading);letter-spacing:.06em}
+
+/* Formula bars */
+.formula-visual{margin-top:32px;padding:24px;border:1px solid var(--gold-dim);background:rgba(197,164,78,.02)}
+.formula-visual-title{text-align:center;font-family:var(--font-heading);font-size:.72rem;color:var(--gold);letter-spacing:.2em;margin-bottom:16px}
+.formula-bar-item{display:grid;grid-template-columns:90px 1fr 44px;gap:10px;align-items:center;margin-bottom:6px}
+.formula-bar-item .name{font-size:.68rem;font-family:var(--font-heading);color:var(--text);text-align:right}
+.bar-wrap{height:14px;background:rgba(197,164,78,.06);overflow:hidden}
+.bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width 1.2s cubic-bezier(.25,.46,.45,.94)}
+.bar-val{font-size:.65rem;color:var(--gold);font-family:var(--font-heading)}
+.quality-note{margin-top:32px;padding:20px 24px;border:1px solid rgba(197,164,78,.12);background:rgba(197,164,78,.02);font-size:.75rem;line-height:2;text-align:center}
+
+/* HOW TO */
+.howto-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.howto-step{text-align:center;padding:28px 16px;border:1px solid var(--gold-dim);transition:border-color .3s}
+.howto-step:hover{border-color:var(--gold)}
+.howto-step-num{font-family:var(--font-display);font-size:1.8rem;color:var(--gold);margin-bottom:12px;opacity:.7}
+.howto-step h4{font-family:var(--font-heading);font-size:.88rem;color:var(--white);margin-bottom:8px;font-weight:700}
+.howto-step p{font-size:.74rem;color:var(--text-dim);line-height:1.7}
 
 /* REVIEWS */
-.reviews { padding: 100px 0; }
-.review-grid { display: flex; flex-direction: column; gap: 28px; margin-top: 20px; }
-.review-card {
-  background: var(--card);
-  padding: 32px 28px;
-  border-left: 3px solid var(--gold);
-  position: relative;
-}
-.review-card::before {
-  content: '\201C';
-  font-family: var(--font-display);
-  font-size: 4rem;
-  color: rgba(197,164,78,0.1);
-  position: absolute;
-  top: 4px; right: 20px;
-  line-height: 1;
-}
-.review-text { font-size: 0.92rem; line-height: 2; margin-bottom: 16px; font-style: italic; }
-.review-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid rgba(197,164,78,0.1);
-  padding-top: 12px;
-}
-.review-author { font-family: var(--font-heading); font-size: 0.82rem; color: var(--gold); }
-.review-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; }
-.review-note { text-align: center; font-size: 0.7rem; color: var(--text-dim); margin-top: 20px; }
+.review-grid{display:flex;flex-direction:column;gap:20px;margin-top:16px}
+.review-card{background:var(--card);padding:28px 24px;border-left:3px solid var(--gold);position:relative}
+.review-headline{font-family:var(--font-heading);font-size:.9rem;color:var(--gold-light);font-weight:700;margin-bottom:10px}
+.review-text{font-size:.82rem;line-height:2;margin-bottom:14px;font-style:italic}
+.review-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(197,164,78,.1);padding-top:10px;font-size:.75rem}
+.review-author{color:var(--gold);font-family:var(--font-heading)}
+.review-stars{color:var(--amazon);letter-spacing:2px}
+.review-note{text-align:center;font-size:.68rem;color:var(--text-dim);margin-top:16px}
+
+/* FAQ */
+.faq{background:var(--deep)}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border:1px solid var(--gold-dim)}
+.faq-q{display:block;width:100%;text-align:left;padding:16px 40px 16px 18px;background:var(--card);border:none;color:var(--white);font-family:var(--font-heading);font-size:.84rem;cursor:pointer;transition:background .3s;position:relative}
+.faq-q:hover{background:var(--card-hover)}
+.faq-q::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--gold);transition:transform .3s}
+.faq-q.active::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;background:rgba(197,164,78,.02);font-size:.78rem;line-height:2;padding:0 18px}
+.faq-a.open{max-height:300px;padding:16px 18px}
 
 /* OFFER */
-.offer {
-  background: linear-gradient(180deg, var(--deep) 0%, var(--black) 100%);
-  padding: 100px 0 80px;
-  text-align: center;
-}
-.offer-box {
-  border: 1px solid var(--gold);
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 50px 36px;
-  background: linear-gradient(180deg, rgba(197,164,78,0.03), transparent);
-  position: relative;
-}
-.offer-box::before, .offer-box::after {
-  content: '';
-  position: absolute;
-  width: 20px; height: 20px;
-}
-.offer-box::before {
-  top: -1px; left: -1px;
-  border-top: 2px solid var(--gold);
-  border-left: 2px solid var(--gold);
-}
-.offer-box::after {
-  bottom: -1px; right: -1px;
-  border-bottom: 2px solid var(--gold);
-  border-right: 2px solid var(--gold);
-}
-.offer-label {
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-.offer-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  color: var(--white);
-  margin-bottom: 24px;
-}
-.offer-price { margin: 28px 0; }
-.price-original { font-size: 0.85rem; color: var(--text-dim); text-decoration: line-through; margin-bottom: 4px; }
-.price-current {
-  font-family: var(--font-heading);
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--gold-bright);
-}
-.price-current .yen { font-size: 1rem; margin-right: 2px; }
-.price-current .tax { font-size: 0.72rem; color: var(--text-dim); font-weight: 400; margin-left: 4px; }
-.price-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 6px; }
-.offer-guarantees {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin: 28px 0 36px;
-}
-.guarantee {
-  font-size: 0.75rem;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-}
-.guarantee::before { content: '✓'; color: var(--gold); font-weight: bold; }
-.cta-final {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.22em;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--red) 0%, #6b1818 100%);
-  padding: 20px 60px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 30px rgba(139,32,32,0.3);
-}
-.cta-final:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(139,32,32,0.5); }
-.cta-final::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border: 1px solid var(--gold);
-  opacity: 0.3;
-  pointer-events: none;
-}
-.cta-subtext { margin-top: 14px; font-size: 0.72rem; color: var(--text-dim); }
+.offer{background:linear-gradient(180deg,var(--deep),var(--black));padding:80px 0;text-align:center}
+.offer-box{border:1px solid var(--gold);max-width:580px;margin:0 auto;padding:40px 32px;background:linear-gradient(180deg,rgba(197,164,78,.03),transparent);position:relative}
+.offer-box::before,.offer-box::after{content:'';position:absolute;width:14px;height:14px}
+.offer-box::before{top:-1px;left:-1px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.offer-box::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+.offer-label{font-family:var(--font-heading);font-size:.68rem;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}
+.offer-title{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,1.8rem);color:var(--white);margin-bottom:4px}
+.offer-subtitle{font-size:.75rem;color:var(--text-dim);margin-bottom:18px}
+.price-current{font-family:var(--font-heading);font-size:2.2rem;font-weight:800;color:var(--gold-bright)}
+.price-current .yen{font-size:.9rem}
+.price-current .tax{font-size:.68rem;color:var(--text-dim);font-weight:400}
+.price-note{font-size:.7rem;color:var(--text-dim);margin-top:4px}
+.amazon-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0 24px}
+.amazon-badge{display:flex;align-items:center;gap:4px;font-size:.68rem;color:var(--text);font-family:var(--font-heading);background:rgba(197,164,78,.04);border:1px solid rgba(197,164,78,.12);padding:5px 12px;border-radius:3px}
+.amazon-badge b{color:var(--amazon)}
+.cta-amazon-large{display:inline-block;font-family:var(--font-heading);font-weight:800;font-size:1rem;letter-spacing:.12em;color:#111;background:var(--amazon);padding:16px 48px;text-decoration:none;transition:transform .3s,box-shadow .3s,background .3s;box-shadow:0 4px 20px rgba(255,153,0,.3);border-radius:4px}
+.cta-amazon-large:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,153,0,.4);background:var(--amazon-dark)}
+.cta-subtext{margin-top:12px;font-size:.66rem;color:var(--text-dim)}
 
-/* FOOTER */
-footer {
-  border-top: 1px solid rgba(197,164,78,0.1);
-  padding: 40px 24px;
-  text-align: center;
-}
-footer p { font-size: 0.68rem; color: var(--text-dim); line-height: 2; }
-footer a { color: var(--text-dim); }
+footer{border-top:1px solid var(--gold-dim);padding:32px 24px;text-align:center}
+footer p{font-size:.62rem;color:var(--text-dim);line-height:2.2}
+footer a{color:var(--text-dim);text-decoration:underline;text-underline-offset:3px}
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .section { padding: 70px 0; }
-  .fv-main { font-size: 2.4rem; }
-  .fv-benefits { gap: 12px; }
-  .fv-benefit { padding: 6px 14px; font-size: 0.75rem; }
-  .pain-grid { grid-template-columns: 1fr; }
-  .merit-item { grid-template-columns: 48px 1fr; gap: 16px; }
-  .merit-icon { width: 48px; height: 48px; font-size: 1.2rem; }
-  .offer-box { padding: 36px 20px; }
-  .sub-ingredients { grid-template-columns: 1fr 1fr; }
-  .cta-primary, .cta-final { padding: 16px 36px; font-size: 0.9rem; }
+@media(max-width:768px){
+  .section{padding:60px 0}
+  .fv-main{font-size:2.4rem}
+  .fv-cta-group{flex-direction:column;align-items:center}
+  .header-links{display:none}
+  .pain-grid{grid-template-columns:1fr}
+  .category-cards{grid-template-columns:1fr}
+  .sub-grid{grid-template-columns:1fr 1fr}
+  .formula-bar-item{grid-template-columns:72px 1fr 40px;gap:6px}
+  .formula-bar-item .name{font-size:.62rem}
+  .howto-steps{grid-template-columns:1fr}
+  .offer-box{padding:32px 20px}
+  .photo-band{height:220px}
+  .story-naming{padding:20px 16px}
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar" id="topBar">
-  <div class="top-bar-logo">オットセイ将軍</div>
-  <button class="top-bar-cta" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'})">ご注文はこちら</button>
+<!-- HEADER NAV -->
+<div class="header-nav" id="headerNav">
+  <div class="header-nav-inner">
+    <a href="#" class="header-logo">オットセイ将軍</a>
+    <div class="header-links">
+      <span class="header-badge">健康食品</span>
+      <a href="#story" class="header-link">将軍の物語</a>
+      <a href="#reason" class="header-link">配合成分</a>
+      <a href="#reviews" class="header-link">お客様の声</a>
+      <a href="#faq" class="header-link">FAQ</a>
+      <a href="ottosei-shogun-order.html" class="header-cta">Amazonで購入</a>
+    </div>
+  </div>
 </div>
 
-<!-- ====== FIRST VIEW ====== -->
-<section class="fv" id="fv">
+<!-- FV -->
+<section class="fv" id="top">
+  <div class="fv-bg"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=80" alt="fur seal"></div>
   <div class="fv-content">
-    <div class="fv-badge">指定医薬部外品</div>
-    <p class="fv-sub">ーー 衰えを、言い訳にする時代は終わった。</p>
+    <span class="fv-badge">健康食品</span>
+    <p class="fv-sub">毎日の健康を、頼もしく守る。</p>
     <h1 class="fv-main"><span class="gold">オットセイ</span>将軍</h1>
-    <p class="fv-tagline">一粒に、出陣の覚悟を。</p>
-    <div class="fv-benefits">
-      <span class="fv-benefit">滋養強壮</span>
-      <span class="fv-benefit">肉体疲労の回復</span>
-      <span class="fv-benefit">虚弱体質の改善</span>
+    <p class="fv-tagline">一粒に、明日の活力を。</p>
+    <p class="fv-tagline-sub">8種の厳選素材で、毎日の健康維持をサポート。</p>
+    <div class="fv-effects">
+      <span class="fv-effect-tag">滋養強壮</span>
+      <span class="fv-effect-tag">毎日の健康維持</span>
+      <span class="fv-effect-tag">栄養補給</span>
     </div>
-    <div class="fv-cta-wrap">
-      <a href="#offer" class="cta-primary">いざ、出陣する</a>
+    <div class="fv-cta-group">
+      <a href="ottosei-shogun-order.html" class="cta-amazon">Amazonで購入する</a>
+      <a href="#reason" class="cta-detail">成分を詳しく見る</a>
     </div>
-    <p class="fv-note">※ 初回限定特別価格でご案内中</p>
+    <div class="fv-amazon-info">
+      <span class="fv-amazon-tag"><b>Prime</b> 対象商品</span>
+      <span class="fv-amazon-tag">翌日配送可能</span>
+      <span class="fv-amazon-tag">30日間返品保証</span>
+    </div>
   </div>
-  <div class="scroll-hint"><span>SCROLL</span><i></i></div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- ====== PAIN ====== -->
+<!-- PAIN -->
 <section class="section pain" id="pain">
   <div class="container">
-    <span class="section-label reveal">Problem</span>
-    <h2 class="section-title reveal">「最近、自分に<br>言い訳が増えていないか。」</h2>
+    <span class="section-label reveal">Daily Health</span>
+    <h2 class="section-title reveal">「健康は当たり前」<br>そう思えていた頃が懐かしい。</h2>
     <div class="gold-line reveal"></div>
     <div class="pain-grid">
-      <div class="pain-card reveal">
-        <span class="pain-card-num">01</span>
-        <p>午前中で<strong>集中力が底をつく</strong>。<br>夕方の会議は、もはや体力との闘い。</p>
+      <div class="pain-card reveal"><span class="pain-card-num">01</span><p>午後になると<strong>集中力が途切れがち</strong>。コンディションの波が大きい。</p></div>
+      <div class="pain-card reveal reveal-delay-1"><span class="pain-card-num">02</span><p>朝の目覚めがスッキリしない。<strong>前日の疲れ</strong>を引きずっている。</p></div>
+      <div class="pain-card reveal reveal-delay-2"><span class="pain-card-num">03</span><p>健康診断の数値が<strong>気になり始めた</strong>。何か始めなきゃ、とは思っている。</p></div>
+      <div class="pain-card reveal reveal-delay-3"><span class="pain-card-num">04</span><p>サプリは試したけど<strong>どれも続かない</strong>。本当に合うものを探している。</p></div>
+    </div>
+    <div class="pain-bottom reveal">毎日の健康を維持する習慣は、始めるなら<span class="em">「今日」</span>がいちばん早い。</div>
+  </div>
+</section>
+
+<!-- PHOTO BAND -->
+<div class="photo-band"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="sunrise ocean"><div class="photo-band-overlay"></div><div class="photo-band-text"><p>その名には、<span class="gold">歴史</span>がある。</p></div></div>
+
+<!-- STORY -->
+<section class="section story" id="story">
+  <div class="container">
+    <span class="section-label reveal">History</span>
+    <h2 class="section-title reveal">「オットセイ将軍」——<br>その名に秘められた物語。</h2>
+    <div class="gold-line reveal"></div>
+    <div class="story-timeline reveal">
+      <div class="story-era">
+        <p class="story-era-date">慶長15年（1610年）</p>
+        <h3>天下人・徳川家康が求めた"海の秘薬"</h3>
+        <p>江戸幕府を開いた徳川家康は、蝦夷地の松前慶広に命じ、オットセイ由来の素材「海狗腎」を献上させました。家康はこれを自らの調合薬に加え、晩年まで精力的に政務を執り続けたと伝えられています。</p>
+        <div class="story-era-quote">「家康は中国の医薬書『医林集要』を参考に、オットセイを加えた丸薬を作り服用していた」<p class="story-era-source">── 国立公文書館『将軍のアーカイブズ』より</p></div>
       </div>
-      <div class="pain-card reveal">
-        <span class="pain-card-num">02</span>
-        <p>朝、目覚ましが鳴っても<strong>体が重い</strong>。<br>疲れが翌日にまで残っている。</p>
+      <div class="story-era">
+        <p class="story-era-date">安永2年〜天保12年（1773年〜1841年）</p>
+        <h3>歴代最長在位50年。"オットセイ将軍"徳川家斉。</h3>
+        <p>第11代将軍・徳川家斉は、オットセイ由来の素材を愛用し、歴代将軍最長の在位50年を誇りました。葛飾北斎の『冨嶽三十六景』が生まれた化政文化の黄金期を牽引した将軍の活力源——それがオットセイだったのです。</p>
       </div>
-      <div class="pain-card reveal">
-        <span class="pain-card-num">03</span>
-        <p>「もう歳だから」が<strong>口癖</strong>になりかけている。<br>かつての自分なら、そんな言葉は使わなかった。</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-card-num">04</span>
-        <p>妻や同僚に<strong>覇気がない</strong>と言われ、<br>反論したいのに、言葉が出ない。</p>
+      <div class="story-era">
+        <p class="story-era-date">令和（現代）</p>
+        <h3>将軍たちの知恵を、現代のあなたへ。</h3>
+        <p>400年にわたり将軍が愛したオットセイの滋養力。古来の素材を現代の技術で厳選・配合し、マカ・高麗人参・鹿角霊芝など8種の素材とともに毎日の健康維持をサポートします。</p>
       </div>
     </div>
-    <div class="pain-bottom reveal">
-      かつて、戦の前に退くことなど<br>考えもしなかった"あの感覚"ーー<br>
-      <span class="em">取り戻す方法は、ある。</span>
+    <div class="story-naming reveal">
+      <h3>だから、<span class="gold">「オットセイ将軍」</span>。</h3>
+      <p>天下人・家康が献上させ、最長政権の家斉が愛用した——歴史が証明するオットセイの価値。その物語を、一粒に込めました。</p>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ====== SOLUTION ====== -->
+<!-- SOLUTION -->
 <section class="section" id="solution">
   <div class="container">
-    <div class="solution-hero reveal">
-      <p class="solution-announce"><span class="gold">オットセイ将軍</span>、<br>出陣。</p>
-      <p class="solution-desc">
-        巷に溢れる"気休め"のサプリメントとは、一線を画す。<br>
-        「オットセイ将軍」は、厚生労働省が効能・効果を認めた<strong style="color:var(--white);">指定医薬部外品</strong>。<br>
-        「滋養強壮」「肉体疲労時の栄養補給」を正式に表記できる、数少ない実力派です。
-      </p>
+    <div class="reveal">
+      <span class="section-label">Solution</span>
+      <h2 class="section-title" style="text-align:center">名前はユニーク。中身は、本格派。</h2>
+      <p class="solution-desc">「オットセイ将軍」は、毎日の健康維持をサポートする健康食品です。8種の天然由来素材を1粒に凝縮した活力サプリメントです。</p>
     </div>
-    <div class="merit-section">
-      <span class="section-label reveal">Why us</span>
-      <h2 class="section-title reveal">食品サプリとの、<br>決定的な違い。</h2>
-      <div class="gold-line reveal"></div>
-      <div class="merit-list">
-        <div class="merit-item reveal">
-          <div class="merit-icon">壱</div>
-          <div>
-            <h3>効能・効果を「表示できる」</h3>
-            <p>一般的なサプリメント（食品区分）は「健康に良い"気がする"」と示唆するのが限界。一方、指定医薬部外品は「滋養強壮」「肉体疲労の回復」といった効能を明記できます。</p>
-          </div>
-        </div>
-        <div class="merit-item reveal">
-          <div class="merit-icon">弐</div>
-          <div>
-            <h3>厚生労働省の承認品目</h3>
-            <p>有効成分の配合量や品質管理について、厳格な基準をクリア。製造工程から最終製品まで、食品サプリとは比較にならない品質保証が義務づけられています。</p>
-          </div>
-        </div>
-        <div class="merit-item reveal">
-          <div class="merit-icon">参</div>
-          <div>
-            <h3>「名前の面白さ」と「中身の本気」</h3>
-            <p>インパクトのある名前で興味を引き、裏を返せば医薬部外品としての実力がある——この"ギャップ"こそ、「オットセイ将軍」最大の武器です。</p>
-          </div>
-        </div>
-      </div>
+    <div class="category-cards reveal">
+      <div class="category-card"><span class="cat-label">健康食品</span><h3>毎日の健康維持に</h3><p>オットセイ粉末、マカ、高麗人参、鹿角霊芝など天然由来の8素材を配合。日々の栄養を手軽にサポート。</p></div>
+      <div class="category-card"><span class="cat-label">GMP国内製造</span><h3>品質管理を徹底</h3><p>GMP準拠の国内工場で製造。原料から最終製品まで厳格な品質管理体制で安心をお届け。</p></div>
+    </div>
+    <div class="compare-section reveal">
+      <h2 class="section-title">一般サプリとの違い。</h2>
+      <div class="gold-line"></div>
+      <table class="compare-table">
+        <thead><tr><th></th><th>一般サプリ<br><small>（食品）</small></th><th class="col-header-highlight">オットセイ将軍<br><small>（健康食品）</small></th></tr></thead>
+        <tbody>
+          <tr><td>天然由来の活力素材</td><td>1〜3種</td><td class="highlight-col"><span class="check">8種配合</span></td></tr>
+          <tr><td>品質管理（GMP工場）</td><td>任意</td><td class="highlight-col"><span class="check">準拠</span></td></tr>
+          <tr><td>成分の配合量を公開</td><td>非公開が多い</td><td class="highlight-col"><span class="check">全成分公開</span></td></tr>
+          <tr><td>Amazon Prime配送</td><td>商品による</td><td class="highlight-col"><span class="check">翌日配送</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ====== REASON ====== -->
+<!-- INGREDIENTS -->
 <section class="section reason" id="reason">
   <div class="container">
     <span class="section-label reveal">Ingredients</span>
     <h2 class="section-title reveal">将軍の"武器"を、知る。</h2>
     <div class="gold-line reveal"></div>
     <div class="ingredient-hero reveal">
-      <h3>カロペプタイド</h3>
-      <p class="sub">CALOPEPTIDE ── オットセイ骨格筋抽出物</p>
-      <p>オットセイの骨格筋から抽出される希少なペプチド成分。古来より漢方の世界で"海の精力源"と称されてきたオットセイから、現代の技術で有効成分を精製。滋養強壮の有効成分として本品に配合しています。</p>
-    </div>
-    <div class="sub-ingredients reveal">
-      <div class="sub-ingredient">
-        <h4>ビタミンB群</h4>
-        <p>エネルギー代謝に不可欠な<br>ビタミンB₁・B₂・B₆を配合</p>
-      </div>
-      <div class="sub-ingredient">
-        <h4>ビタミンE</h4>
-        <p>めぐりをサポートし<br>活力ある毎日を後押し</p>
-      </div>
-      <div class="sub-ingredient">
-        <h4>タウリン</h4>
-        <p>体のコンディションを<br>力強く支えるアミノ酸</p>
-      </div>
-      <div class="sub-ingredient">
-        <h4>ローヤルゼリー</h4>
-        <p>女王蜂だけが食す<br>天然の栄養素の宝庫</p>
+      <h3>オットセイ粉末</h3>
+      <p class="sub">FUR SEAL EXTRACT ── 古来より伝わる"海の活力源"</p>
+      <p>北の海で力強く生きるオットセイ。その骨格筋から得られる粉末は、古来より滋養素材として珍重されてきました。</p>
+      <div class="ingredient-hero-amounts">
+        <div class="amt"><div class="amt-num">33.3<small style="font-size:.6em">mg</small></div><div class="amt-unit">1日あたり</div></div>
+        <div class="amt"><div class="amt-num">6.667<small style="font-size:.6em">%</small></div><div class="amt-unit">配合率</div></div>
       </div>
     </div>
-    <div class="quality-note reveal">
-      ※ 本品は指定医薬部外品です。配合成分・含有量は承認基準に基づいています。<br>
-      GMP準拠の国内工場で製造。品質管理を徹底し、安心してお召し上がりいただけます。
+    <h3 class="sub-title reveal">将軍を支える、7つの精鋭</h3>
+    <div class="sub-grid">
+      <div class="sub-item reveal"><div class="sub-item-top"><h4>マカエキス</h4><span class="dose">40.0mg/日</span></div><p>ペルー原産"アンデスの活力草"。コンディション維持をサポート。</p><span class="effect-tag">活力サポート</span></div>
+      <div class="sub-item reveal reveal-delay-1"><div class="sub-item-top"><h4>高麗人参エキス</h4><span class="dose">15.0mg/日</span></div><p>数千年の歴史を持つ伝統素材。めぐりと活力を内側から整えます。</p><span class="effect-tag">滋養の王道</span></div>
+      <div class="sub-item reveal reveal-delay-2"><div class="sub-item-top"><h4>鹿角霊芝</h4><span class="dose">33.3mg/日</span></div><p>希少な鹿角状の子実体を使用。体本来のバランスを整えます。</p><span class="effect-tag">希少キノコ</span></div>
+      <div class="sub-item reveal reveal-delay-3"><div class="sub-item-top"><h4>亜鉛酵母</h4><span class="dose">25.5mg/日</span></div><p>酵母由来の高吸収型ミネラル。健康維持に欠かせない亜鉛を効率的に。</p><span class="effect-tag">必須ミネラル</span></div>
+      <div class="sub-item reveal"><div class="sub-item-top"><h4>パワーミックスブレンド</h4><span class="dose">33.3mg/日</span></div><p>複数の活力素材を独自配合。相乗効果で毎日の活力をサポート。</p><span class="effect-tag">独自ブレンド</span></div>
+      <div class="sub-item reveal reveal-delay-1"><div class="sub-item-top"><h4>天然タウリン</h4><span class="dose">5.0mg/日</span></div><p>天然由来にこだわり、コンディション維持をサポート。</p><span class="effect-tag">コンディション維持</span></div>
+      <div class="sub-item reveal reveal-delay-2"><div class="sub-item-top"><h4>EAAミックス</h4><span class="dose">5.0mg/日</span></div><p>必須アミノ酸9種を配合。体づくりの基盤を支える成分。</p><span class="effect-tag">必須アミノ酸</span></div>
+    </div>
+    <div class="formula-visual reveal">
+      <p class="formula-visual-title">1粒あたりの配合比率</p>
+      <div class="formula-bars" id="formulaBars">
+        <div class="formula-bar-item"><span class="name">マカエキス</span><div class="bar-wrap"><div class="bar" data-width="80"></div></div><span class="bar-val">8.0%</span></div>
+        <div class="formula-bar-item"><span class="name">オットセイ粉末</span><div class="bar-wrap"><div class="bar" data-width="66.7"></div></div><span class="bar-val">6.7%</span></div>
+        <div class="formula-bar-item"><span class="name">鹿角霊芝</span><div class="bar-wrap"><div class="bar" data-width="66.7"></div></div><span class="bar-val">6.7%</span></div>
+        <div class="formula-bar-item"><span class="name">パワーミックス</span><div class="bar-wrap"><div class="bar" data-width="66.7"></div></div><span class="bar-val">6.7%</span></div>
+        <div class="formula-bar-item"><span class="name">亜鉛酵母</span><div class="bar-wrap"><div class="bar" data-width="51"></div></div><span class="bar-val">5.1%</span></div>
+        <div class="formula-bar-item"><span class="name">高麗人参</span><div class="bar-wrap"><div class="bar" data-width="30"></div></div><span class="bar-val">3.0%</span></div>
+        <div class="formula-bar-item"><span class="name">天然タウリン</span><div class="bar-wrap"><div class="bar" data-width="10"></div></div><span class="bar-val">1.0%</span></div>
+        <div class="formula-bar-item"><span class="name">EAAミックス</span><div class="bar-wrap"><div class="bar" data-width="10"></div></div><span class="bar-val">1.0%</span></div>
+      </div>
+    </div>
+    <div class="quality-note reveal">※ 本品は健康食品です。GMP準拠の国内工場にて製造。毎日安心してお召し上がりいただけます。</div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- HOW TO -->
+<section class="section" id="howto">
+  <div class="container">
+    <span class="section-label reveal">How to use</span>
+    <h2 class="section-title reveal">飲み方は、至って簡単。</h2>
+    <div class="gold-line reveal"></div>
+    <div class="howto-steps">
+      <div class="howto-step reveal"><div class="howto-step-num">壱</div><h4>1日5粒を目安に</h4><p>小粒（5mm）で飲みやすい。150粒入り約30日分。</p></div>
+      <div class="howto-step reveal reveal-delay-1"><div class="howto-step-num">弐</div><h4>水またはぬるま湯で</h4><p>朝食後や就寝前など、お好きなタイミングで。</p></div>
+      <div class="howto-step reveal reveal-delay-2"><div class="howto-step-num">参</div><h4>毎日続けることが大切</h4><p>Amazonの定期おトク便なら切らさず続けられます。</p></div>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ====== SOCIAL PROOF ====== -->
-<section class="section reviews" id="reviews">
+<!-- REVIEWS -->
+<section class="section" id="reviews">
   <div class="container">
-    <span class="section-label reveal">Voice</span>
-    <h2 class="section-title reveal">先陣を切った男たちの、声。</h2>
+    <span class="section-label reveal">Reviews</span>
+    <h2 class="section-title reveal">ご愛用者の声</h2>
     <div class="gold-line reveal"></div>
     <div class="review-grid">
-      <div class="review-card reveal">
-        <p class="review-text">正直、名前を見たときは笑いました。「オットセイ将軍」って何だと。でも、指定医薬部外品と知って試してみたら、朝の目覚めが驚くほど軽くなった。名前と中身のギャップに完全にやられました。</p>
-        <div class="review-meta">
-          <span class="review-author">T.K. 様（52歳・経営者）</span>
-          <span class="review-stars">★★★★★</span>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <p class="review-text">海外出張が多く、時差ぼけと疲れで常にコンディションが悪かった。飲み始めてから、出張先でもタフに動ける自分に気づきました。妻にも「最近なんか元気じゃない？」と言われています。</p>
-        <div class="review-meta">
-          <span class="review-author">M.S. 様（47歳・商社勤務）</span>
-          <span class="review-stars">★★★★★</span>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <p class="review-text">いくつもサプリを試しては挫折してきましたが、これは"食品"ではなく"医薬部外品"。その安心感が続ける理由になっています。デスクにパッケージを置いていると、部下に「何ですかそれ？」と聞かれるのも密かな楽しみです。</p>
-        <div class="review-meta">
-          <span class="review-author">Y.H. 様（58歳・部長職）</span>
-          <span class="review-stars">★★★★☆</span>
-        </div>
-      </div>
+      <div class="review-card reveal"><p class="review-headline">「毎朝のコンディションが安定してきた。」</p><p class="review-text">健康食品はいろいろ試してきましたが、8種もの素材が入っている充実感が違いました。名前のインパクトで最初は笑いましたが、今は毎朝欠かさず飲んでいます。</p><div class="review-meta"><span class="review-author">T.K. 様（52歳・経営者）</span><span class="review-stars">★★★★★</span></div></div>
+      <div class="review-card reveal"><p class="review-headline">「健康診断の前に始めてよかった。」</p><p class="review-text">マカや高麗人参が入った本格的なものを探していました。Prime翌日配送で届いて、すぐに始められたのも良かったです。</p><div class="review-meta"><span class="review-author">M.S. 様（47歳・商社勤務）</span><span class="review-stars">★★★★★</span></div></div>
+      <div class="review-card reveal"><p class="review-headline">「8種の素材が入ってこの価格。続けやすい。」</p><p class="review-text">普通のサプリは1〜2成分のものが多いですが、これは8種類も入っている。GMP工場製造の安心感もあります。定期おトク便で10%オフなのも嬉しい。</p><div class="review-meta"><span class="review-author">Y.H. 様（58歳・管理職）</span><span class="review-stars">★★★★☆</span></div></div>
     </div>
     <p class="review-note reveal">※ 個人の感想であり、効能・効果を保証するものではありません。体感には個人差があります。</p>
   </div>
@@ -757,66 +428,62 @@ footer a { color: var(--text-dim); }
 
 <div class="section-divider"></div>
 
-<!-- ====== OFFER ====== -->
-<section class="section offer" id="offer">
+<!-- FAQ -->
+<section class="section faq" id="faq">
   <div class="container">
-    <span class="section-label reveal">Special Offer</span>
-    <h2 class="section-title reveal" style="text-align:center;">初陣を飾る、特別なご案内。</h2>
-    <div class="offer-box reveal">
-      <p class="offer-label">── 初回限定価格 ──</p>
-      <h3 class="offer-title">オットセイ将軍（1箱 30日分）</h3>
-      <div class="offer-price">
-        <p class="price-original">通常価格 12,800円</p>
-        <p class="price-current"><span class="yen">¥</span>4,980<span class="tax">（税込）</span></p>
-        <p class="price-note">※ お一人様1回限り ／ 2回目以降は定期便で9,800円（税込）</p>
-      </div>
-      <div class="offer-guarantees">
-        <span class="guarantee">全額返金保証（30日間）</span>
-        <span class="guarantee">送料無料</span>
-        <span class="guarantee">いつでも解約可能</span>
-      </div>
-      <a href="#" class="cta-final">将軍と共に、出陣する</a>
-      <p class="cta-subtext">※ 定期便の縛りはございません。初回のみでの解約も可能です。</p>
+    <span class="section-label reveal">FAQ</span>
+    <h2 class="section-title reveal">よくあるご質問</h2>
+    <div class="gold-line reveal"></div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q">Q. 一般的なサプリメントとの違いは？</button><div class="faq-a">「オットセイ将軍」は8種もの天然由来素材を1粒に凝縮。GMP準拠の国内工場で製造し、配合量もすべて公開しています。</div></div>
+      <div class="faq-item"><button class="faq-q">Q. Amazonで購入できますか？</button><div class="faq-a">はい。Prime対象商品のため翌日配送が可能です。「定期おトク便」なら通常価格から10%OFFで自動お届けします。</div></div>
+      <div class="faq-item"><button class="faq-q">Q. 1日にどのくらい飲めばいいですか？</button><div class="faq-a">1日5粒を目安に、水またはぬるま湯でどうぞ。小粒（5mm）で飲みやすく、1箱150粒入り（約30日分）です。</div></div>
+      <div class="faq-item"><button class="faq-q">Q. 他の薬と併用できますか？</button><div class="faq-a">本品は健康食品です。服用中のお薬がある方は、念のためかかりつけの医師・薬剤師にご相談ください。</div></div>
+      <div class="faq-item"><button class="faq-q">Q. 返品・返金はできますか？</button><div class="faq-a">Amazonの返品ポリシーに準じます。商品到着から30日以内であれば返品が可能です。</div></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<!-- OFFER -->
+<section class="section offer" id="offer">
   <div class="container">
-    <p>
-      販売名：オットセイ将軍　区分：指定医薬部外品<br>
-      効能：滋養強壮、虚弱体質の改善、肉体疲労・病中病後・食欲不振・栄養障害・発熱性消耗性疾患・産前産後などの場合の栄養補給<br>
-      ※ 用法・用量を守り、正しくお使いください。<br><br>
-      <a href="#">特定商取引法に基づく表記</a>　|　<a href="#">プライバシーポリシー</a>　|　<a href="#">お問い合わせ</a><br>
-      &copy; 2026 オットセイ将軍 All Rights Reserved.
-    </p>
+    <span class="section-label reveal">Amazon</span>
+    <h2 class="section-title reveal" style="text-align:center">Amazonで、今すぐ始める。</h2>
+    <div class="offer-box reveal">
+      <p class="offer-label">Amazon.co.jp</p>
+      <h3 class="offer-title">オットセイ将軍</h3>
+      <p class="offer-subtitle">健康食品｜1箱150粒（約30日分）</p>
+      <div style="margin:20px 0"><p class="price-current"><span class="yen">¥</span>4,980<span class="tax">（税込）</span></p><p class="price-note">定期おトク便なら <b style="color:var(--amazon)">¥4,482</b>（10%OFF）</p></div>
+      <div class="amazon-badges"><span class="amazon-badge"><b>Prime</b> 翌日配送</span><span class="amazon-badge">30日間返品保証</span><span class="amazon-badge">定期おトク便対応</span></div>
+      <a href="ottosei-shogun-order.html" class="cta-amazon-large">Amazonで購入する</a>
+      <p class="cta-subtext">※ Amazon.co.jpの商品ページに遷移します。</p>
+    </div>
   </div>
-</footer>
+</section>
+
+<footer><div class="container"><p>
+  販売名：オットセイ将軍　区分：健康食品　内容量：150粒（1粒100mg）<br>
+  滋養強壮・毎日の健康維持をサポートする健康食品です。<br>
+  ※ 用法・用量を守り、正しくお使いください。<br>
+  販売：Amazon.co.jp（出荷元：Amazon / 販売元：オットセイ将軍公式ストア）<br><br>
+  <a href="#">特定商取引法に基づく表記</a>　|　<a href="#">プライバシーポリシー</a>　|　<a href="#">お問い合わせ</a><br>
+  &copy; 2026 オットセイ将軍 All Rights Reserved.
+</p></div></footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-let lastScroll = 0;
-const topBar = document.getElementById('topBar');
-window.addEventListener('scroll', () => {
-  const curr = window.pageYOffset;
-  topBar.style.transform = curr > lastScroll && curr > 100 ? 'translateY(-100%)' : 'translateY(0)';
-  lastScroll = curr;
-}, { passive: true });
+let ls=0;const hd=document.getElementById('headerNav');
+window.addEventListener('scroll',()=>{const c=window.pageYOffset;hd.style.transform=c>ls&&c>80?'translateY(-100%)':'translateY(0)';ls=c},{passive:true});
 
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('active'));if(!o){a.classList.add('open');b.classList.add('active')}})});
+
+const bo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('.bar').forEach((b,i)=>{setTimeout(()=>{b.style.width=b.dataset.width+'%'},i*70)});bo.unobserve(x.target)}})},{threshold:.3});
+const fb=document.getElementById('formulaBars');
+if(fb){fb.querySelectorAll('.bar').forEach(b=>b.style.width='0%');bo.observe(fb)}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
 </script>
 </body>
 </html>
